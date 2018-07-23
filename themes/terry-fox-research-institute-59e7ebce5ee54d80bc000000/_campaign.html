@@ -1,0 +1,16 @@
+{% for page in tag.most_recent_published_pages limit: 1 %}
+
+<div class="col-md-4 col-sm-6 one-third bg-image-full overlay campaign" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}')" data-href="{{ page.url }}">
+	<i class="fa fa-play"></i>
+	<h2 class="headline">
+		{{ page.headline }}
+	</h2>
+	<div class="overlay-one-third">
+		<span>
+			{{ page.excerpt }}
+			<a href="{{ page.url }}">Learn More</a>
+		</span>
+	</div>
+</div>
+
+{% endfor %}

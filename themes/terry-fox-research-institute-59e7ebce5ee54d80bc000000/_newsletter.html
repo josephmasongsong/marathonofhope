@@ -1,0 +1,21 @@
+<div class="col-md-4 col-sm-6 newsletter-sign-up">
+	<div class="form-container">
+
+	<h2 class="headline">
+		{{ page.headline }}
+	</h2>
+	<p>{{ page.signup.content }}</p>
+
+
+   	{% form_for signup %}   
+      {% hidden_field_tag "page_id", page.id %} 
+      <div class="form-errors">{% error_messages_for signup %}</div>
+      <input required="" class="text user-error form-control newsletter-input" id="signup_email" name="signup[email]" placeholder="Enter your email..." type="email" aria-invalid="true" onkeyup="checkInput(this.value)">
+      <button type="submit" class="newsletter-submit btn btn-default" name="commit" value="Join">
+      	Sign Up
+      </button>
+      <div class="form-submit"></div>
+  	{% endform_for %}
+		
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<header class="homepage bg-image-full overlay" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
+  <div class="container-fluid no-padding-x">
+    <div class="row no-gutters">
+      <div class="col-sm-11" style="float: none; margin: 0 auto;">
+        {% include "nav" %}
+      </div>          
+      <div class="headline-container page-basic col-sm-6 col-sm-offset-3">
+            <h1 class="headline">{{ page.headline | strip_html }}</h1>
+            <!-- <span class="subtitle">{{ page.excerpt }}</span>             -->
+      </div>  
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="content">
+        <h1 class="headline">{{ page.headline | strip_html }}</h1>
+        <hr>
+        {{ page.basic.content }}      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <section class="col-sm-11 grid" style="float:none; margin: 0 auto;">
+    <div class="row">
+      {% for child in page.children %}
+        <div class="col-sm-4 grid-item">
+          <div class="content">
+            {{ child.excerpt }}
+            <h1 class="headline">{{ child.headline | strip_html }}</h1>
+            <hr>
+            {{ child.basic.content }}      
+          </div>
+        </div>
+      {% endfor %}
+    </div>    
+  </section>
+
+
+
+

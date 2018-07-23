@@ -1,0 +1,207 @@
+
+
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 767px) {
+	.homepage, .video-container-splash  {
+		height: 400px;
+	}
+	.video-playback-link {
+		font-size: 16px;
+	}
+	.subtitle p {
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	.homepage .main-nav, .video-container-splash .main-nav {
+		// margin-top: 10px;
+		.navbar-brand>img {
+			max-width: 120px;
+		}
+	}
+	.homepage .headline, .video-container-splash .headline {
+		font-size: 36px;
+	}
+	.homepage-header-container {
+	    padding-left: 15px !important;
+	    padding-right: 15px !important;		
+	}
+	.basic-page-single-column {
+		.headline {
+			font-size: 42px;
+		}
+		.content {
+			padding: 80px 15px;
+		}
+	}
+	.two-thirds, .one-third, .twitter-feed, .newsletter-sign-up {
+		height: 375px;
+	}
+	.one-third .headline {
+		font-size: 42px;
+	}
+	.one-third .overlay-one-third span {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	.two-thirds .headline-container {
+		left: 15px;	
+	}
+	.two-thirds .headline {
+		font-size: 36px;
+	}
+	.one-half .content, .full-row .content {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.quote-big {
+			padding-left: 15px;
+			padding-right: 15px;
+		.headline-continer {
+
+		}
+		.headline {
+			font-size: 36px;
+		}
+		.subtitle {
+			font-size: 20px;
+		}
+	}
+	.quote-big-white-bg {
+		padding: 80px 15px;
+		.headline {
+			font-size: 32px;
+		}
+	}
+	.grid-item-no-video {
+		height: 375px;
+	}
+	footer {
+		padding: 40px 0;
+	}
+	.footer-logo {
+		text-align: center;
+		img {
+		    max-width: 250px;
+		    margin-bottom: 30px;
+		}
+	}
+}
+
+@media only screen and (max-width : 767px) and (orientation: portrait) {
+	.homepage .main-nav, .video-container-splash .main-nav {
+		// .navbar-nav>li>a {
+		// 	margin-left: 15px;
+		// 	margin-right: 15px;
+			padding-top: 0;
+		.navbar-brand>img {
+		    width: 100px;
+		}
+	}
+	.homepage .main-nav, .video-container-splash .main-nav {
+	    margin-top: 0px;
+	}
+	.main-nav.shrink .navbar-brand {
+		margin-top: 0 !important;
+	}
+	.video-container-splash .main-nav .navbar-nav>li>a, .homepage .main-nav .navbar-nav>li>a {
+	    padding: 15px 0px;
+	    margin: 0 10px;
+	}
+	.hamburger {
+		margin-top: 25px;
+	}
+}
+
+@media only screen and (max-width : 767px) and (orientation: landscape) {
+	.homepage .main-nav, .video-container-splash .main-nav {
+			padding-top: 0;
+		.navbar-brand>img {
+
+		}
+	}	
+	.main-nav.shrink .navbar-brand {
+		margin-top: 0 !important;
+	}	
+	.video-container-splash .main-nav .navbar-nav>li>a, .homepage .main-nav .navbar-nav>li>a {
+	    padding: 15px 0px;
+	    margin: 0 10px;
+	}
+	.main-nav.shrink .navbar-brand {
+		margin-top: 0 !important;
+	}
+	.hamburger {
+		margin-top: 30px;
+	}
+}
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation: portrait)  {
+	.homepage .main-nav, .video-container-splash .main-nav {
+		.navbar-nav>li>a {
+			margin-left: 15px;
+			margin-right: 15px;
+
+		}
+		.navbar-brand>img {
+		    width: 150px;
+		}
+	}
+
+	.video-container-splash .main-nav {
+		padding-top: 20px;
+	}
+	.video-container-splash .main-nav.shrink {
+		padding-top: 40px;
+	}
+	.video-container-splash .headline {
+    	font-size: 42px;
+	}
+	.two-thirds .headline {
+		    font-size: 38px;
+	}
+	.one-third .headline {
+		font-size: 42px;
+	}
+
+
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1024px ) and (orientation: landscape) {
+		.navbar-brand>img {
+			max-width: 200px;
+		}
+		.video-container-splash .headline {
+			font-size: 48px;
+		}
+		.main-nav.shrink {
+			.navbar-brand>img {
+				max-width: 120px;
+			}
+		}
+		.one-third .headline {
+			font-size: 48px;
+		}
+		.newsletter-sign-up .headline {
+			font-size: 36px;
+		}
+		.one-half .content .headline, .full-row .content .headline {
+			font-size: 18px;
+		}
+		.footer-logo {
+			text-align: center;
+			img {
+			    max-width: 250px;
+			    margin-bottom: 30px;
+			}
+		}
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	background-color: #fff;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+	background-color: transparent;
+}

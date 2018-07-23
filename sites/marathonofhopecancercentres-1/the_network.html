@@ -1,0 +1,187 @@
+{% assign tags_list = "" %} {% for tag in page.tags %} {% assign tags_list = tag.name | append: ", " | append: tags_list %} {% endfor %}
+
+<header class="homepage bg-image-full overlay" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
+  <div class="container-fluid no-padding-x">
+    <div class="row no-gutters">
+      <div class="col-sm-11" style="float: none; margin: 0 auto;">
+        {% include "nav" %}
+      </div>          
+      <div class="headline-container page-basic col-sm-6 col-sm-offset-3">
+            <h1 class="headline">{{ page.headline | strip_html }}</h1>
+            <!-- <span class="subtitle">{{ page.excerpt }}</span>             -->
+      </div>  
+    </div>
+  </div>
+</header>
+
+
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% unless child_tags_list contains "end quote" or child_tags_list contains "large quote" or child_tags_list contains "split columns" or child_tags_list contains "full width red" or child_tags_list contains "full width blue" %}
+      <section>
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="content">
+              <h1 class="headline">{{ child.headline | strip_html }}</h1>
+              <hr>
+              {{ child.basic.content }}      
+            </div>
+          </div>
+        </div>
+      </section>
+      {% if child_tags_list contains "has video" %}
+        <div class="video-container">
+          {{ child.excerpt }} 
+        </div>
+      {% elsif child.features.size > 0 %}
+        <div class="video-container bg-image-full overlay" style="background-image: url('{% for feature in child.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
+        </div>        
+      {% endif %} 
+
+    {% endunless %}
+  {% endfor %}
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% if child_tags_list contains "has gallery" %}
+      <section class="col-sm-11 grid" style="float:none; margin: 0 auto;">
+        <div class="row">
+          {% for record in child.children %}
+            {% assign record_tags_list = "" %} {% for tag in record.tags %} {% assign record_tags_list = tag.name | append: ", " | append: record_tags_list %} {% endfor %}
+            
+            {% if record_tags_list contains "has video" %}
+              <div class="col-sm-4 grid-item">
+                <div class="content">
+                  {{ record.excerpt }}
+                  <h1 class="headline">{{ record.headline | strip_html }}</h1>
+                  <hr>
+                  {{ record.basic.content | strip_html }}      
+                </div>
+              </div>
+            {% else %}
+              <div class="col-sm-4 ">
+                <div class="content grid-item-no-video " >
+                  <div class="overlay-grid-item">
+                    <span>
+                      <h1 class="headline">{{ record.headline | strip_html }}</h1>
+                      <hr>
+                      {{ record.basic.content | strip_html }}
+                      <p style="margin-top: 30px;">{{ record.excerpt }}</p>    
+                    </span>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>    
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% if child_tags_list contains "full width red" %}
+      <div class="container-fluid no-padding-x">
+        <div class="row no-gutters full-row brand-red">
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="content">
+                  <h2 class="headline">
+                    {{ child.headline }}
+                  </h2>
+                  <div class="divider"></div>
+                  {{ child.basic.content }}
+              </div>
+            </div>
+        </div>
+      </div>
+    {% elsif child_tags_list contains "full width blue" %}
+      <div class="container-fluid no-padding-x">
+        <div class="row no-gutters full-row brand-blue">
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="content">
+                  <h2 class="headline">
+                    {{ child.headline }}
+                  </h2>
+                  <div class="divider"></div>
+                  {{ child.basic.content }}
+              </div>
+            </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% if child_tags_list contains "split columns" %}
+      <div class="no-padding-x container-fluid">
+        <div class="row no-gutters">
+          <div class="col-sm-6 one-half brand-red">
+            <div class="content">
+              <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                  <h2 class="headline">
+                    {{ child.headline }}
+                  </h2>
+                  <div class="divider"></div>
+                  {{ child.basic.content }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% for grandchild in child.children limit: 1 %}
+            <div class="col-sm-6 one-half brand-blue">
+              <div class="content">
+                  <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                      <h2 class="headline">
+                        {{ grandchild.headline }}
+                      </h2>
+                      <div class="divider"></div>
+                      {{ grandchild.basic.content }}
+                    </div>
+                  </div>
+              </div>      
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% if child_tags_list contains "large quote" %}
+      <section class="quote-big bg-image-full overlay" style="background-image: url('{% for feature in child.features limit: 1 %}{{ feature.image_url }}{% endfor %}');">
+        <div class="row">
+          <div class="headline-container col-sm-8 col-sm-offset-2">
+            <h1 class="headline">
+              {{ child.basic.content }}
+            </h1>
+            <span class="subtitle">{{ child.excerpt }}</span>    
+          </div>    
+        </div>
+      </section>
+    {% endif %}  
+  {% endfor %}
+
+
+  {% for child in page.children %}
+    {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
+    {% if child_tags_list contains "end quote" %}
+        <section class="quote-big-white-bg">
+          <div class="row">
+            <div class="headline-container col-sm-8 col-sm-offset-2">
+              <h1 class="headline">
+                {{ child.basic.content }}
+              </h1>
+            </div>    
+          </div>
+        </section>
+    {% endif %}  
+  {% endfor %}
+
+
+
+
