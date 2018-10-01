@@ -31,6 +31,10 @@ $secondary-red: #fc4238;
 	font-size: 22px;
 }
 
+body {
+	color: #000;
+}
+
 a, a:hover, a:focus {
 	text-decoration: none;
 }
@@ -496,7 +500,7 @@ header, section {
 .content {
 	font-family: 'ArcherPro';
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 20px;
 	padding: 80px 0;
 	h1 {
 		@include headline-bold;

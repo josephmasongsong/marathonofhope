@@ -1,8 +1,8 @@
 $(window).scroll(function() {
   if ($(document).scrollTop() >= 50) {
-    $('.navbar-brand img').attr('src', 'http://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1530223075/marathonofhope.png?1530223075');
+    $('.navbar-brand img').attr('src', 'https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538025314/marathonofhope1.png?1538025314');
   } else if ($(document).scrollTop() <= 50) {
-    $('.navbar-brand img').attr('src', 'https://d3n8a8pro7vhmx.cloudfront.net/marathonofhopecancercentres/sites/1/meta_images/original/MarathonofHope-white-text.png?1530224340');
+    $('.navbar-brand img').attr('src', 'https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538025314/marathonofhope_whitetext1.png?1538025314');
   }
 });
 

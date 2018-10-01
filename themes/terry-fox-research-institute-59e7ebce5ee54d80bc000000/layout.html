@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="{{ page.headline }}">
+    <meta property="og:site_name" content="Marathon of Hope Cancer Centres">
+    <meta property="og:url" content="{{ page.full_url }}">
+    <meta property="og:image" content="{% if page.features.size > 0 %}{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}{% endif %}">
+
     <title>{{ page_title }}</title>
-    <!-- Bootstrap -->
+
     <link href="theme.scss" rel="stylesheet">
     <script src="https://use.fontawesome.com/e404551e3e.js"></script>
     <link href="hamburgers.css" rel="stylesheet">
@@ -49,15 +55,11 @@
 
                       <ul class="nav">
                         {% for child in site.root_nav_pages %}
-                          {% if child.slug == 'about_us' or child.slug == 'how_we_invest' or child.slug == 'our_categories' %}
-                            <li>
-                              <a href="{% if page.is_homepage? %}#{{ child.slug }}{% else %}/#{{ child.slug }}{% endif %}" class="scrolltarget">{{ child.name }}</a>
-                            </li>
-                          {% else %}              
+                          {% unless child.slug == 'donate' %}
                             <li {% if child.is_or_is_ancestor_of_current_page? %}class="active"{% endif %}>
                               <a href="{{ child.url }}">{{ child.name }}</a>
                             </li>
-                          {% endif %}
+                          {% endunless %}
                         {% endfor %}
                       </ul>      
                       
@@ -86,9 +88,16 @@
                         <li>
                           <a href="https://www.youtube.com/channel/UCBDv7HePJ3saW1vZ3xlaCjA" target="_blank" class="social-media-link">
                             <i class="fa fa-youtube"></i>
+                            Youtube
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/company/terry-fox-research-institute/?originalSubdomain=ca" target="_blank" class="social-media-link">
+                            <i class="fa fa-linkedin"></i>
                             LinkedIn
                           </a>
                         </li>
+                         
                       </ul> 
 
                     </div>

@@ -6,7 +6,6 @@
       </div>          
       <div class="headline-container page-basic col-sm-6 col-sm-offset-3">
             <h1 class="headline">{{ page.headline | strip_html }}</h1>
-            <!-- <span class="subtitle">{{ page.excerpt }}</span>             -->
       </div>  
     </div>
   </div>
@@ -17,10 +16,9 @@
     <div class="col-sm-10 col-sm-offset-1">
       <div class="achievements text-center">
         <div class="circle"></div>
-        <h1>5 YEAR HIGH LEVEL ACHIEVEMENTS</h1>
+        <h1>{{ page.excerpt }}</h1>
         <hr>
-        <p>100,000 Canadian Cancer Genomes with patient profiles in the Network.</p>
-        <p>Network Built: Marathon of Hope Cancer Centres fully launched in all regions, or in late stage pilots</p>
+        {{ page.basic.content }}
       </div>      
     </div>
   </div>
@@ -28,87 +26,20 @@
 
 <section class="timeline">
     <div class="container">
+      {% for child in page.children %}
       <div class="timeline-item">
         <div class="timeline-img"></div>
 
-        <div class="timeline-content js--fadeInLeft">
-          <div class="date">2017</div>
-          <h2>PILOT PHASE UNDERWAY</h2>
+        <div class="timeline-content {% cycle 'js--fadeInLeft', 'js--fadeInRight' %}">
+          <div class="date">{{ child.excerpt }}</div>
+          <h2>{{ child.headline }}</h2>
           <div class="divider"></div>
 
-          <p>The Terry Fox Research Institute is implementing a
-sequential number of pilot projects to develop
-precision medicine programs and systems for sharing
-data. The first of these pilots was launched in April
-2017. Working with BC Cancer and the Princess
-Margaret Cancer Centre, this pilot has a $12-million
-budget over 2 years. The self-funded pilot project is
-focused upon clinical genomics, immunotherapy,
-imaging and information technology linkages. The
-second pilot will develop a Montreal, Quebec Cancer
-Consortium with four major hospitals and two
-universities, which will be reviewed and launched in the
-first half of 2018. The third and fourth pilots will follow
-in the Atlantic and Prairie provinces with launches in
-late 2018 and 2019</p>
+          {{ child.basic.content }}
 
         </div>
-      </div> 
-      
-
-      
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInRight">
-          <div class="date">2018</div>
-
-          <h2>MARATHON OF HOPE CANCER CENTRE -
-DESIGNATION PROCESS RELEASED</h2>
-          <div class="divider"></div>
-          <p>The Terry Fox Research Institute intends to launch its
-designation program for Cancer Centres in 2018. The
-designation process will be published, and Centres
-will be invited to apply based on their capacity and
-performance in precision oncology as evaluated by
-international peers. The Terry Fox Research Institute
-intends to establish at least 5 Marathon of Hope
-Cancer Centres or Consortia across Canada.</p>
-
-        </div>
-      </div> 
-
-      <div class="timeline-item">
-
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <div class="date">2018 - 2020</div>
-          <h2>MARATHON OF HOPE CANCER
-CENTRE - OFFICIAL DESIGNATIONS</h2>
-          <div class="divider"></div>
-
-          <p>Working in collaboration with its partners to apply the
-learnings and outcomes from the pilots, including
-technology solutions and best practices for data
-sharing, the Terry Fox Research Institute will designate
-the first Marathon of Hope Cancer Centres in 2018 and
-2019. It is anticipated that these Centres will be in
-British Columbia, Ontario and Quebec. The Terry Fox
-Research Institute will designate Marathon of Hope
-Cancer Consortia in the Atlantic and Prairie provinces
-in 2019 and 2020. In addition, the Terry Fox Research
-Institute will seek to designate a Marathon of Hope
-program in pediatric cancers. All the centres will be
-working together to create Canada’s largest cancer
-genome database, containing 100,000 cancer
-genomes with related treatment and outcome data.</p>
-        </div>
-      </div>   
-      
-      
-      
-          
+      </div>       
+      {% endfor %}
     </div>
   </section>
 

@@ -59,12 +59,9 @@ html, body {
 .timeline-item {
   width: 100%;
   margin-bottom: 70px;
-
-
 }
 .timeline-item:nth-child(even) .timeline-content {
   float: right;
-  // padding: 40px 30px 10px 30px;
   padding: 30px;
 }
 .timeline-item:nth-child(even) .timeline-content .date {
@@ -87,7 +84,9 @@ html, body {
   display: block;
   clear: both;
 }
-
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
 .timeline-content {
   position: relative;
   width: 45%;
