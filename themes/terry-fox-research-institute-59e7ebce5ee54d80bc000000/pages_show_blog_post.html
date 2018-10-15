@@ -1,17 +1,36 @@
-{% assign tags_list = "" %} {% for tag in page.tags %} {% assign tags_list = tag.name | append: ", " | append: tags_list %} {% endfor %}
-
-<header class="homepage bg-image-full overlay" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
+<header class="homepage bg-image-full overlay" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}'); height: 100vh;">
   <div class="container-fluid no-padding-x">
     <div class="row no-gutters">
       <div class="col-sm-11" style="float: none; margin: 0 auto;">
         {% include "nav" %}
       </div>          
-      <div class="headline-container page-basic col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-            <h1 class="headline">{{ page.headline | strip_html }}</h1>
+
+      <div class="col-xs-12" style="background: linear-gradient(transparent,rgba(0,0,0,.9)); z-index: 3; bottom: 0; position: absolute;">
+          <div class="col-md-8 col-md-offset-2" style="position:relative; margin-bottom: 80px; ">
+            <h1 style="font-family: 'FreightSans Pro'; font-weight: bold; font-size: 64px; color: #fff;">{{ page.headline | strip_html }}</h1>
+            <h3 style="color: #fff;font-family: 'ArcherPro';font-weight: bold; line-height: 1.4; margin-bottom:0;">{{ page.blog_post.content | strip_html }}</h3>
+          </div>
       </div>  
+
     </div>
   </div>
 </header>
+
+
+<section class="basic-page-single-column">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div class="content">
+          <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
+          <p style="font-weight: bold; margin-bottom: 0; margin-top: 20px;" class="text-center">{{ page.published_at | date: '%B %d, %Y %l:%M %p' }}</p>
+          <hr>
+          {{ page.blog_post.content_flip }}    
+        </div>
+      </div>
+    </div>    
+  </div>
+</section>
 
 {% assign new_children_array = page.children | sort: 'published_at' %}
 
@@ -19,22 +38,28 @@
 {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
 {% unless child_tags_list contains "end quote" or child_tags_list contains "large quote" or child_tags_list contains "split columns" or child_tags_list contains "full width red" or child_tags_list contains "full width blue" or child_tags_list contains "bottom" %}
 
+{% if child.headline.size > 0 or child.basic.content.size > 0 %}
+{% unless child_tags_list contains "has video" %}
 <section class="basic-page-single-column">
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-      <div class="content">
-        <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
-
-
-        <h1 class="headline">{{ child.headline | strip_html }}</h1>
-        <hr>
-        {{ child.basic.content }}      
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div class="content">
+          {% if child.headline.size > 0 %}
+          <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
+          <h1 class="headline">{{ child.headline | strip_html }}</h1>
+          <hr>
+          {% endif %}
+          {% if child.basic.content.size > 0 %}
+          {{ child.basic.content }} 
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </div>    
+    </div>    
   </div>
 </section>
+{% endunless %}
+{% endif %}
 {% if child_tags_list contains "has video" %}
   <div class="video-container">
     {{ child.excerpt }} 
@@ -202,7 +227,5 @@
 {% endif %}  
 
 {% endfor %}
-
-
 
 

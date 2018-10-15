@@ -16,7 +16,7 @@
     <script src="https://use.fontawesome.com/e404551e3e.js"></script>
     <link href="hamburgers.css" rel="stylesheet">
     <link href="custom.scss" rel="stylesheet">
-    {% if page.slug == 'animated_timeline' %}
+    {% if page.slug == 'timeline' %}
     <link href="timeline.scss" rel="stylesheet">
     {% endif %}    
     {{ content_for_header }}
@@ -55,11 +55,11 @@
 
                       <ul class="nav">
                         {% for child in site.root_nav_pages %}
-                          {% unless child.slug == 'donate' %}
+
                             <li {% if child.is_or_is_ancestor_of_current_page? %}class="active"{% endif %}>
                               <a href="{{ child.url }}">{{ child.name }}</a>
                             </li>
-                          {% endunless %}
+
                         {% endfor %}
                       </ul>      
                       
@@ -120,7 +120,11 @@
     <script src="bootstrap.js"></script>
     <script src="basic.js"></script>
 
-    {% if page.slug == 'animated_timeline' %}
+
+    <script src="toggle-nav.js"></script>
+
+
+    {% if page.slug == 'timeline' %}
     <script src="scrollreveal.min.js"></script>
     <script src="timeline.js"></script>
     {% else %}

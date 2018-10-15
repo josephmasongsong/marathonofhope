@@ -1,0 +1,26 @@
+{% include 'fullsize-carousel' %}
+
+<section style="padding: 80px 80px 50px;">
+
+  <div class="container-fluid">
+    <div class="row">
+      {% for post in page.blog.most_recent_blog_posts %}
+      <div class="col-md-4">
+         <div class="bg-image-full overlay news-box" style="background-image: url('{% for feature in post.features limit: 1 %}{{ feature.image_url }}{% endfor %}'); height: 284px; width: 100%; position: relative; background-size: cover;" data-href="{{ post.url }}">
+          
+          <div class="headline">
+            <h3>{{ post.headline }}</h3>
+            <p style="font-weight: bold;">{{ post.author.published_name }} | {{ post.published_at | date: '%B %d, %Y' }}</p>
+          </div>
+          <div class="overlay-one-third">
+            <span>
+              {{ page.excerpt }}
+              <a href="{{ post.url }}">Read More</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
