@@ -1,0 +1,14 @@
+{% for page in tag.most_recent_published_pages limit: 3 %}
+<div class="item {% if forloop.first == true %}active{% endif %} overlay" style="background-image: url('{% for feature in page.features limit: 1 %}{{ feature.image_url }}{% endfor %}');" data-href="{{ page.url }}">
+  <div class="container-fluid no-padding-x">
+    <div class="row no-gutters">     
+      <div class="col-xs-12" style="background: linear-gradient(transparent,rgba(0,0,0,.9)); z-index: 3; bottom: 0; position: absolute;">
+          <div class="col-md-7 col-md-offset-2 article-headers-container">
+            <h1 class="article-header">{{ page.headline | strip_html }}</h1>
+            <h3 class="article-subheader">{{ page.blog_post.content | strip_html }}</h3>
+          </div>
+      </div>  
+    </div>
+  </div>
+</div>
+{% endfor %}

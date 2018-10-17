@@ -490,7 +490,7 @@ header, section {
 	height: 408px;
 	width: 100%;
 	position: relative;
-	background-color: #dcd8d6;
+	// background-color: #dcd8d6;
 	padding-top: 0 !important;
 	padding-bottom: 0;
 	color: #fff;
@@ -807,6 +807,27 @@ a.twitter-timeline:focus {
 	// margin-top: 116px;
 }
 
+.article-headers-container {
+	position:relative; 
+	margin-bottom: 80px; 
+}
+
+.article-header {
+	font-family: 'FreightSans Pro'; 
+	font-weight: bold; 
+	font-size: 64px; 
+	color: #fff;	
+}
+.article-subheader {
+	color: #fff;
+	font-family: 'ArcherPro';
+	font-weight: bold; 
+	line-height: 1.4; 
+	margin-bottom:0	
+}
+.news-grid {
+	padding: 80px 80px 50px;
+}
 
 @import "fullscreen-carousel";
 @import "mobile";

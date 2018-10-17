@@ -6,9 +6,9 @@
       </div>          
 
       <div class="col-xs-12" style="background: linear-gradient(transparent,rgba(0,0,0,.9)); z-index: 3; bottom: 0; position: absolute;">
-          <div class="col-md-8 col-md-offset-2" style="position:relative; margin-bottom: 80px; ">
-            <h1 style="font-family: 'FreightSans Pro'; font-weight: bold; font-size: 64px; color: #fff;">{{ page.headline | strip_html }}</h1>
-            <h3 style="color: #fff;font-family: 'ArcherPro';font-weight: bold; line-height: 1.4; margin-bottom:0;">{{ page.blog_post.content | strip_html }}</h3>
+          <div class="col-md-8 col-md-offset-2 article-headers-container">
+            <h1 class="article-header">{{ page.headline | strip_html }}</h1>
+            <h3 class="article-subheader">{{ page.blog_post.content | strip_html }}</h3>
           </div>
       </div>  
 
@@ -23,7 +23,7 @@
       <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
         <div class="content">
           <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
-          <p style="font-weight: bold; margin-bottom: 0; margin-top: 20px;" class="text-center">{{ page.published_at | date: '%B %d, %Y %l:%M %p' }}</p>
+          <p style="font-weight: bold; margin-bottom: 0; margin-top: 20px;" class="text-center">{{ page.published_at | date: '%B %d, %Y' }}</p>
           <hr>
           {{ page.blog_post.content_flip }}    
         </div>

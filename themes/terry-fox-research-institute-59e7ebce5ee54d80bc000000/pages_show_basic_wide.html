@@ -65,6 +65,7 @@
         <div class="col-sm-4 ">
           <a href="{{ record.excerpt }}">
             <div class="content grid-item-no-video">
+              <img src="{% for feature in record.features limit: 1 %}{{ feature.image_url }}{% endfor %}" class="img-responsive">
               <div class="overlay-grid-item">
                 <span>
                   <h1 class="headline">{{ record.headline | strip_html }}</h1>

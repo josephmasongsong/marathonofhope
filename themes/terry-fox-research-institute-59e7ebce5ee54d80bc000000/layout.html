@@ -132,7 +132,7 @@
       <script src="https://player.vimeo.com/api/player.js" type="text/javascript"></script>
       <script src="player.js"></script>
       {% else %}
-        {% unless page.slug == 'partners' or page.slug == 'centres' %}
+        {% unless page.slug == 'partners' or page.slug == 'centres' or page.type_slug == 'blog' or page.type_slug == 'blog_post' %}
           <script src="https://player.vimeo.com/api/player.js" type="text/javascript"></script>
           <script src="vimeo-embed.js"></script>
         {% endunless %}
