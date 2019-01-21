@@ -31,7 +31,20 @@
                     <li><a href="{{ child.url }}">{{ child.name }}</a></li>
                   {% endif %}
                   {% for child2 in child.nav_children %}
+                  {% if child2.nav_children.size > 0 %}
+                    <li class="dropdown-submenu">
+                      <a href="{{ child2.url }}">{{ child2.name }}</a>
+                      <ul class="dropdown-menu">
+                        {% for child2child in child2.nav_children %}
+                        <li>
+                          <a href="{{ child2child.url }}">{{ child2child.name }}</a>
+                        </li>
+                        {% endfor %}                        
+                      </ul>
+                    </li>
+                  {% else %}
                     <li><a href="{{ child2.url }}">{{ child2.name }}</a></li>
+                  {% endif %}
                   {% endfor %}
                 </ul>
               </li>

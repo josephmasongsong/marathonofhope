@@ -17,7 +17,7 @@
 
 {% for child in new_children_array %}
 {% assign child_tags_list = "" %} {% for tag in child.tags %} {% assign child_tags_list = tag.name | append: ", " | append: child_tags_list %} {% endfor %}
-{% unless child_tags_list contains "end quote" or child_tags_list contains "large quote" or child_tags_list contains "split columns" or child_tags_list contains "full width red" or child_tags_list contains "full width blue" or child_tags_list contains "bottom" %}
+{% unless child_tags_list contains "end quote" or child_tags_list contains "large quote" or child_tags_list contains "split columns" or child_tags_list contains "full width red" or child_tags_list contains "full width blue" or child_tags_list contains "bottom" or child_tags_list contains "has logos" or child_tags_list contains "hide in parent" %}
 
 <section class="basic-page-single-column">
   <div class="container-fluid">
@@ -83,6 +83,20 @@
 </section>
 {% endif %}
 
+{% if child_tags_list contains "has logos" %}
+<div class="container-fluid no-padding-x">
+<section class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 grid" style="float:none; margin: 0 auto; padding-bottom: 80px;">
+  <div class="row">
+    {% for feature in child.features %}
+      <div class="col-md-5ths col-xs-6 partner-logo">
+        <img src="{{feature.image_url}}" class="img-responsive">
+      </div>
+    {% endfor %}
+  </div>
+</section>
+</div>
+{% endif %}
+
 {% if child_tags_list contains "full width red" %}
 <div class="container-fluid no-padding-x">
   <div class="row no-gutters full-row brand-red">
@@ -116,7 +130,7 @@
 
 {% if child_tags_list contains "split columns" %}
 <div class="no-padding-x container-fluid">
-  <div class="row no-gutters">
+  <div class="row no-gutters flex">
     <div class="col-sm-6 one-half brand-red">
       <div class="content">
         <div class="row">

@@ -291,11 +291,16 @@ header, section {
   margin-right: 0;
   margin-left: 0;
 
+
   & > [class^="col-"],
   & > [class*=" col-"] {
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+.flex {
+	display: flex;
 }
 
 .two-thirds, .one-third, .twitter-feed, .newsletter-sign-up {
@@ -441,6 +446,10 @@ header, section {
 
 .one-half {
 	min-height: 420px;
+	a { 
+		color: #fff;
+		font-weight: bold;
+	}
 }
 
 .one-half, .full-row {
@@ -827,6 +836,94 @@ a.twitter-timeline:focus {
 }
 .news-grid {
 	padding: 80px 80px 50px;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+	margin-top: 0;
+	width: inherit;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+	border-radius: 0 6px 6px 6px;
+	li a {
+		white-space: normal;
+	}
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
 }
 
 @import "fullscreen-carousel";
