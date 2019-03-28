@@ -22,7 +22,7 @@ $secondary-red: #fc4238;
 @mixin two-thirds-headline {
     font-family: 'FreightSansCndPro';
     font-weight: bold;
-    font-style: normal;	
+    font-style: normal;
 }
 
 @mixin freightsans-light {
@@ -91,7 +91,7 @@ a:hover {
 	background-color: $footer-bg !important;
 	margin-top: 0 !important;
 	.navbar-nav>li>a {
-		color:#2e2a26 !important;		
+		color:#2e2a26 !important;
 	}
 	.navbar-right >li.active>a.nav-link, .navbar-right >li>a.nav-link:hover {
 		border-bottom: 2px solid #2e2a26;
@@ -146,13 +146,13 @@ header, section {
 		    padding: 0;
 		}
 		.dropdown-menu>li{
-		    background: #ece8dc !important;						
+		    background: #ece8dc !important;
 		}
 		.dropdown-menu>li>a {
 		    font-family: 'Myriad Pro';
 		    font-weight: 600;
 		    font-size: 18px;
-		    padding: 15px 30px;	
+		    padding: 15px 30px;
 		    border: 0;
 		    &:hover {
 		    	border: 0;
@@ -165,7 +165,7 @@ header, section {
 @media (min-width: 768px) {
 	.navbar-right .dropdown-menu {
 	    top: 76px;
-	}	
+	}
 }
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
 	background-color: transparent;
@@ -181,8 +181,8 @@ header, section {
 			text-align: center;
 		    position: absolute;
 		    top: 50%;
-		    transform: translateY(-50%);	    
-		    bottom: inherit;	
+		    transform: translateY(-50%);
+		    bottom: inherit;
 	    }
 
 	}
@@ -197,7 +197,7 @@ header, section {
 		@include headline-bold;
 		font-size: 64px;
 		text-transform: uppercase;
-	}	
+	}
 }
 
 
@@ -343,9 +343,9 @@ header, section {
 	}
 	.headline {
 		color: #fff;
-		h2 { 
+		h2 {
 			@include headline-bold;
-			font-size: 56px; 
+			font-size: 56px;
 		}
 		position: absolute;
 		z-index: 3;
@@ -370,7 +370,7 @@ header, section {
 	.headline {
 		h3 {
 			@include headline-bold;
-			font-size: 24px; 
+			font-size: 24px;
 		}
 	}
 }
@@ -385,7 +385,7 @@ header, section {
 	    right: 0;
 	    left: 0;
 	    background-color: rgba(0,0,0,0.45);
-	}	
+	}
 }
 
 .one-third .overlay-one-third, .news-box .overlay-one-third {
@@ -406,7 +406,7 @@ header, section {
     span {
     	@include two-thirds-headline;
 	    color: #fff !important;
-	    font-size: 24px !important;  
+	    font-size: 24px !important;
 	    display: block;
 	    position: relative;
 	    top: 50%;
@@ -428,12 +428,12 @@ header, section {
 
 	    	margin-top: 0px;
 	    }
-    }	
+    }
 }
 
 
 .one-third:nth-child(even) .overlay-one-third, .col-md-4:nth-child(even) .news-box .overlay-one-third {
-	background-color: rgba(237,102,82, 0.9);	
+	background-color: rgba(237,102,82, 0.9);
 }
 .one-third:nth-child(odd) .overlay-one-third, .col-md-4:nth-child(odd) .news-box .overlay-one-third {
 	background-color: rgba(36,48,56,0.9);
@@ -446,7 +446,7 @@ header, section {
 
 .one-half {
 	min-height: 420px;
-	a { 
+	a {
 		color: #fff;
 		font-weight: bold;
 	}
@@ -531,7 +531,7 @@ header, section {
     -webkit-transition: opacity 500ms ease-out;
     -moz-transition: opacity 500ms ease-out;
     -o-transition: opacity 500ms ease-out;
-	background-color: rgba(0,0,0,0.8);	
+	background-color: rgba(0,0,0,0.8);
 
     span {
 	    display: block;
@@ -580,7 +580,7 @@ header, section {
 	    border-bottom: 2px solid;
 	    margin-bottom: 1rem;
 	    border-radius: 0;
-	    border-color: #000;		
+	    border-color: #000;
 	    margin: 40px 0;
 	    padding: 0 0 10px 0;
 		font-size: 24px;
@@ -608,7 +608,7 @@ header, section {
 	    border-bottom: 2px solid;
 	    margin-bottom: 1rem;
 	    border-radius: 0;
-	    border-color: #fff;		
+	    border-color: #fff;
 	    margin: 40px 0;
 	    padding: 0 0 10px 0;
 		font-size: 24px;
@@ -647,9 +647,9 @@ header, section {
 	}
 
 	input:-webkit-autofill,
-	input:-webkit-autofill:hover, 
+	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus
-	input:-webkit-autofill, 
+	input:-webkit-autofill,
 	textarea:-webkit-autofill,
 	textarea:-webkit-autofill:hover
 	textarea:-webkit-autofill:focus,
@@ -751,7 +751,7 @@ footer {
 			font-size: 18px;
 			// padding: 10px 30px;
 		    padding: 5px 0px;
-		    margin: 0 30px;			
+		    margin: 0 30px;
 		}
 	}
 	.headline-container {
@@ -763,8 +763,8 @@ footer {
 			text-align: center;
 		    position: absolute;
 		    top: 50%;
-		    transform: translateY(-50%);	    
-		    bottom: inherit;	
+		    transform: translateY(-50%);
+		    bottom: inherit;
 	    }
 
 	}
@@ -817,22 +817,22 @@ a.twitter-timeline:focus {
 }
 
 .article-headers-container {
-	position:relative; 
-	margin-bottom: 80px; 
+	position:relative;
+	margin-bottom: 80px;
 }
 
 .article-header {
-	font-family: 'FreightSans Pro'; 
-	font-weight: bold; 
-	font-size: 64px; 
-	color: #fff;	
+	font-family: 'FreightSans Pro';
+	font-weight: bold;
+	font-size: 48px; 
+	color: #fff;
 }
 .article-subheader {
 	color: #fff;
 	font-family: 'ArcherPro';
-	font-weight: bold; 
-	line-height: 1.4; 
-	margin-bottom:0	
+	font-weight: bold;
+	line-height: 1.4;
+	margin-bottom:0
 }
 .news-grid {
 	padding: 80px 80px 50px;
@@ -928,5 +928,3 @@ a.twitter-timeline:focus {
 
 @import "fullscreen-carousel";
 @import "mobile";
-
-

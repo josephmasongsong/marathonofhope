@@ -1,7 +1,7 @@
 
 
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (max-width : 767px) {
 	.news-grid {
 		padding: 50px 0;
@@ -42,7 +42,7 @@
 	}
 	.homepage-header-container {
 	    padding-left: 15px !important;
-	    padding-right: 15px !important;		
+	    padding-right: 15px !important;
 	}
 	.basic-page-single-column {
 		.headline {
@@ -63,7 +63,7 @@
 		margin-right: 15px;
 	}
 	.two-thirds .headline-container {
-		left: 15px;	
+		left: 15px;
 	}
 	.two-thirds .headline {
 		font-size: 36px;
@@ -137,10 +137,10 @@
 		.navbar-brand>img {
 
 		}
-	}	
+	}
 	.main-nav.shrink .navbar-brand {
 		margin-top: 0 !important;
-	}	
+	}
 	.video-container-splash .main-nav .navbar-nav>li>a, .homepage .main-nav .navbar-nav>li>a {
 	    padding: 15px 0px;
 	    margin: 0 10px;
@@ -189,7 +189,7 @@
 
 @media only screen and (min-width : 768px) and (max-width : 1024px ) and (orientation: landscape) {
 		.navbar-brand>img {
-			max-width: 200px;
+			max-width: 160px;
 		}
 		.video-container-splash .headline {
 			font-size: 48px;
@@ -198,6 +198,21 @@
 			.navbar-brand>img {
 				max-width: 120px;
 			}
+		}
+		.main-nav .navbar-nav>li>a {
+			font-size: 16px;
+		}
+		.article-header {
+			font-size: 48px;
+		}
+		.news-box .headline h3 {
+			font-size: 20px;
+		}
+		.news-box p {
+			font-size: 16px;
+		}
+		.article-subheader {
+			 font-size: 20px;
 		}
 		.one-third .headline {
 			font-size: 48px;
@@ -222,4 +237,10 @@
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 	background-color: transparent;
+}
+
+@media only screen and (min-width : 1200px) {
+	.article-header {
+		font-size: 64px;
+	}
 }
