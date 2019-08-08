@@ -5,10 +5,10 @@
     <div class="row no-gutters">
       <div class="col-sm-11" style="float: none; margin: 0 auto;">
         {% include "nav" %}
-      </div>          
+      </div>
       <div class="headline-container page-basic col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
             <h1 class="headline">{{ page.headline | strip_html }}</h1>
-      </div>  
+      </div>
     </div>
   </div>
 </header>
@@ -24,25 +24,25 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
       <div class="content">
-        <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
+        <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1565296281/moh_redcircle-noleaf-01.png?1565296281" alt="" class="red-circle">
 
 
         <h1 class="headline">{{ child.headline | strip_html }}</h1>
         <hr>
-        {{ child.basic.content }}      
+        {{ child.basic.content }}
       </div>
     </div>
-  </div>    
+  </div>
   </div>
 </section>
 {% if child_tags_list contains "has video" %}
   <div class="video-container">
-    {{ child.excerpt }} 
+    {{ child.excerpt }}
   </div>
 {% elsif child.features.size > 0 %}
   <div class="video-container bg-image-full overlay" style="background-image: url('{% for feature in child.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
-  </div>        
-{% endif %} 
+  </div>
+{% endif %}
 
 {% endunless %}
 
@@ -51,14 +51,14 @@
   <div class="row">
     {% for record in child.children %}
       {% assign record_tags_list = "" %} {% for tag in record.tags %} {% assign record_tags_list = tag.name | append: ", " | append: record_tags_list %} {% endfor %}
-      
+
       {% if record_tags_list contains "has video" %}
         <div class="col-md-4 col-sm-6 grid-item">
           <div class="content">
             {{ record.excerpt }}
             <h1 class="headline">{{ record.headline | strip_html }}</h1>
             <hr>
-            {{ record.basic.content | strip_html }}      
+            {{ record.basic.content | strip_html }}
           </div>
         </div>
       {% else %}
@@ -71,7 +71,7 @@
                   <h1 class="headline">{{ record.headline | strip_html }}</h1>
                   <hr>
                   {{ record.basic.content | strip_html }}
-                  <p style="margin-top: 30px;">{{ record.excerpt }}</p>    
+                  <p style="margin-top: 30px;">{{ record.excerpt }}</p>
                 </span>
               </div>
             </div>
@@ -79,7 +79,7 @@
         </div>
       {% endif %}
     {% endfor %}
-  </div>    
+  </div>
 </section>
 {% endif %}
 
@@ -156,7 +156,7 @@
                 {{ grandchild.basic.content }}
               </div>
             </div>
-        </div>      
+        </div>
       </div>
     {% endfor %}
   </div>
@@ -170,24 +170,24 @@
       <h1 class="headline">
         {{ child.basic.content }}
       </h1>
-      <span class="subtitle">{{ child.excerpt }}</span>    
-    </div>    
+      <span class="subtitle">{{ child.excerpt }}</span>
+    </div>
   </div>
 </section>
-{% endif %}  
+{% endif %}
 
 {% if child_tags_list contains "bottom" %}
 {% if child.headline.size > 0 and child.basic.content.size > 0 %}
 <section class="basic-page-single-column">
-  <div class="container-fluid">  
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
         <div class="content">
-          <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1538589088/reddot.png?1538589088" alt="" class="red-circle">
+          <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1565296281/moh_redcircle-noleaf-01.png?1565296281" alt="" class="red-circle">
 
           <h1 class="headline">{{ child.headline | strip_html }}</h1>
           <hr>
-          {{ child.basic.content }}      
+          {{ child.basic.content }}
         </div>
       </div>
     </div>
@@ -197,12 +197,12 @@
 {% endif %}
 {% if child_tags_list contains "bottom" and child_tags_list contains "has video" %}
 <div class="video-container">
-  {{ child.excerpt }} 
+  {{ child.excerpt }}
 </div>
 {% elsif child_tags_list contains "bottom" and child.features.size > 0 %}
 <div class="video-container bg-image-full overlay" style="background-image: url('{% for feature in child.features limit: 1 %}{{ feature.image_url }}{% endfor %}')">
-</div>        
-{% endif %} 
+</div>
+{% endif %}
 
 {% if child_tags_list contains "end quote" %}
   <section class="quote-big-white-bg">
@@ -211,13 +211,9 @@
         <h1 class="headline">
           {{ child.basic.content }}
         </h1>
-      </div>    
+      </div>
     </div>
   </section>
-{% endif %}  
+{% endif %}
 
 {% endfor %}
-
-
-
-

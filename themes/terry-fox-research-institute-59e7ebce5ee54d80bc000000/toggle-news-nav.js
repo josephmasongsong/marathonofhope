@@ -7,13 +7,9 @@ if ($(document).scrollTop() >= 50) {
 });
 $(window).scroll(function() {
 if ($(document).scrollTop() > 50) {
-  $('.main-nav').removeClass('navbar-static-top');
-  $('.main-nav').addClass('navbar-fixed-top');
   $('.main-nav').addClass('shrink');
 
 } else {
   $('.main-nav').removeClass('shrink');
-  $('.main-nav').removeClass('navbar-fixed-top');
-  $('.main-nav').addClass('navbar-static-top');
 }
 });

@@ -189,7 +189,7 @@
 
 @media only screen and (min-width : 768px) and (max-width : 1024px ) and (orientation: landscape) {
 		.navbar-brand>img {
-			max-width: 160px;
+			max-width: 120px;
 		}
 		.video-container-splash .headline {
 			font-size: 48px;
@@ -241,6 +241,18 @@
 
 @media only screen and (min-width : 1200px) {
 	.article-header {
-		font-size: 64px;
+		font-size: 56px;
+	}
+}
+
+@media only screen and (max-width : 1199px) {
+	.main-nav .navbar-nav>li>a {
+		margin: 0 20px;
+	}
+}
+
+@media only screen and (min-width : 1025px) and (max-width : 1334px) {
+	.navbar-brand > img {
+		width: 156px;
 	}
 }

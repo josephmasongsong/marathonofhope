@@ -19,12 +19,67 @@
     {% if page.slug == 'timeline' %}
     <link href="timeline.scss" rel="stylesheet">
     {% endif %}
+    {% if page.is_homepage? == true %}
+    <style>
+      .callout {
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        z-index: 9999;
+      }
+      .callout-header {
+        padding: 25px 15px;
+        background: #ed6652;
+        font-size: 24px;
+        color: white;
+        font-family: 'FreightSans Pro';
+        font-weight: bold;
+      }
+      .callout-container {
+        padding: 15px;
+        background-color: #ece8dc;
+        color: black;
+        font-family: 'ArcherPro';
+        font-size: 18px;
+      }
+      .closebtn {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        /* color: white; */
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+      }
+      .closebtn:hover {
+        color: lightgrey;
+      }
+    </style>
+    {% endif %}
     {{ content_for_header }}
     <script type="text/javascript">
       NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
     </script>
   </head>
   <body class="{{ page.page_class_name }} page-{{ request.template | replace: '_', '-' }} js">
+    {% if page.is_homepage? == true%}
+    {% for child in page.children limit: 1 %}
+    {% if child.slug == 'callout' %}
+    <div class="callout">
+      <!-- <div class="callout-header">{{ page.headline }}</div> -->
+      <!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span> -->
+      <div class="callout-container">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+        {{ child.basic.content }}
+      </div>
+    </div>
+
+    {% endif %}
+    {% endfor %}
+    {% endif %}
     <div id="page-wrapper">
 
       {% if request.is_sidebar? %}
@@ -45,7 +100,7 @@
               <div class="row">
                 <div class="col-md-4 col-sm-5 footer-logo">
                   <a href="/">
-                    <img src="https://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1530223075/marathonofhope-black-text-noleaf.png?1530223075" style="width: 320px;">
+                    <img src="http://d3n8a8pro7vhmx.cloudfront.net/themes/59e7ebce5ee54d80bc000000/attachments/original/1562694540/moh-logo-square.png?1562694540" style="max-width: 100%;">
                   </a>
                 </div>
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-1">
@@ -74,7 +129,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="https://twitter.com/tfri_research" target="_blank" class="social-media-link">
+                          <a href="https://twitter.com/marathonofhope" target="_blank" class="social-media-link">
                             <i class="fa fa-twitter"></i>
                             Twitter
                           </a>
@@ -119,7 +174,11 @@
     </div>
     <script src="bootstrap.js"></script>
     <script src="basic.js"></script>
+    {% unless page.slug == "news" %}
     <script src="toggle-nav.js"></script>
+    {% else %}
+    <script src="toggle-news-nav.js"></script>
+    {% endunless %}
     {% if page.slug == 'timeline' %}
     <script src="scrollreveal.min.js"></script>
     <script src="timeline.js"></script>

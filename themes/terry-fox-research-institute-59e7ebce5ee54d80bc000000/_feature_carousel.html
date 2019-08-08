@@ -1,0 +1,7 @@
+{% for page in tag.most_recent_published_pages limit: 4 %}
+<div class="item {% if forloop.first == true %}active{% endif %}">
+	<h2>{{ page.headline | strip_html }}</h2>
+
+	<a class="learn-more" href="{{ page.url }}">Read More</a>
+</div>
+{% endfor %}
