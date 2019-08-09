@@ -59,6 +59,8 @@
       }
     </style>
     {% endif %}
+
+
     {{ content_for_header }}
     <script type="text/javascript">
       NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
@@ -129,7 +131,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="https://twitter.com/marathonofhope" target="_blank" class="social-media-link">
+                          <a href="https://twitter.com/tfri_research" target="_blank" class="social-media-link">
                             <i class="fa fa-twitter"></i>
                             Twitter
                           </a>
@@ -175,7 +177,7 @@
     <script src="bootstrap.js"></script>
     <script src="basic.js"></script>
     {% unless page.slug == "news" %}
-    <script src="toggle-nav.js"></script>
+     <script src="toggle-nav.js"></script>
     {% else %}
     <script src="toggle-news-nav.js"></script>
     {% endunless %}
